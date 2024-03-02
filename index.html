@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+	<meta charset="UTF-8">
+	<title>Elizune | Mi espacio</title> 
+	<meta name = "description" content = "Mi sitio">
+    <link rel="stylesheet" href="src/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+	<link rel="icon" type="image/x-icon" href="src/favicon.ico">
+  </head>
+  <body>
+  <body bgcolor="#001a33">
+    <div class="wrapper">
+      <input type="checkbox" id="btn" hidden>
+      <label for="btn" class="menu-btn">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-times"></i>
+      </label>
+      <nav id="sidebar">
+        <div class="title">Menú</div>
+        <ul class="list-items">
+          <li><a href="nav/inicio.html"><i class="fas fa-home"></i>Inicio</a></li>
+		  <li><a href="nav/sobremi.html"><i class="fas fa-user"></i>Sobre mi</a></li>
+		  <li><a href="nav/archivo.html"><i class="fa-solid fa-comment-dots"></i>Archivo</a></li>
+          <li><a href="nav/contactame.html"><i class="fas fa-envelope"></i>Contactame</a></li>
+          <div class="icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </ul>
+      </nav>
+    </div>
+<div class="container">
+  <header class="header">
+    <h2 style="color:black; margin-left: 10px;">Elizune | Mi espacio</h2>
+  </header>
+
+  <main class="content">
+        <h3 style="color:black; margin-left: 20px;">Que seas bienvenido a mi pequeño espacio, rinconcito, o como se llame.</h3>
+		<br>
+		<center><iframe width="600" height="400" src="https://www.youtube.com/embed/nRe3xFeyhVY?si=DmwDhptQcIkulJnS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>
+				<br>
+		<center><iframe width="600" height="400" src="https://www.youtube.com/embed/nRe3xFeyhVY?si=DmwDhptQcIkulJnS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>
+		
+  </main>
+
+  <div class="sidebartiesa">
+	<img src="src/perfil.png" width="300px" style="border: 2px solid black;"/>
+	 <h1 style="color:black";>Elizune</h1>
+	 	 <p>Yo soy yo</p>
+
+  </div>
+
+  <footer class="footer">
+    <p style="color:black; margin-left: 10px;">Elizune ©  1995-2023 </p>
+  </footer>
+</div>
+  
+<script> 
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.list-items a');
+
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      fetch(e.target.href)
+        .then(response => response.text())
+        .then(data => {
+          document.querySelector('.content').innerHTML = data;
+        });
+    });
+  });
+});
+ </script> 
+</body>
+</html>
